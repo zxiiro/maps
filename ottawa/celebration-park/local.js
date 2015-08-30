@@ -10,6 +10,6 @@ var map = L.map('map', {
     maxBounds: bounds,
 });
 
-L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
