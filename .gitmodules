@@ -1,0 +1,3 @@
+[submodule "thirdparty/leaflet-ajax"]
+	path = thirdparty/leaflet-ajax
+	url = https://github.com/calvinmetcalf/leaflet-ajax.git
