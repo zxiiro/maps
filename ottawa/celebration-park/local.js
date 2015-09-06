@@ -51,4 +51,24 @@ var wastebinLayer = new L.GeoJSON.AJAX("./geojson/waste_baskets.geojson", {
 });
 wastebinLayer.addTo(map);
 
+var bicycleIcon = L.AwesomeMarkers.icon({
+  icon: 'bicycle',
+  prefix: 'fa',
+  markerColor: 'blue'
+})
+
+var wastebinLayer = new L.GeoJSON.AJAX("./geojson/bicycle_parking.geojson", {
+    style: function (feature) {
+        return feature.properties && feature.properties.style;
+    },
+
+    pointToLayer: function (feature, latlng) {
+        return L.marker(latlng, {
+          icon: bicycleIcon
+        });
+    }
+});
+wastebinLayer.addTo(map);
+
+
 
