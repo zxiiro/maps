@@ -1,3 +1,6 @@
 [submodule "thirdparty/leaflet-ajax"]
 	path = thirdparty/leaflet-ajax
 	url = https://github.com/calvinmetcalf/leaflet-ajax.git
+[submodule "thirdparty/Leaflet.awesome-markers"]
+	path = thirdparty/Leaflet.awesome-markers
+	url = https://github.com/lvoogdt/Leaflet.awesome-markers.git

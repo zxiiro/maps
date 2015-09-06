@@ -14,7 +14,7 @@ L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-var benchLayer = new L.GeoJSON.AJAX("./benches.geojson", {
+var benchLayer = new L.GeoJSON.AJAX("./geojson/benches.geojson", {
     style: function (feature) {
         return feature.properties && feature.properties.style;
     },
@@ -31,3 +31,24 @@ var benchLayer = new L.GeoJSON.AJAX("./benches.geojson", {
     }
 });
 benchLayer.addTo(map);
+
+var trashIcon = L.AwesomeMarkers.icon({
+  icon: 'trash',
+  prefix: 'fa',
+  markerColor: 'black'
+})
+
+var wastebinLayer = new L.GeoJSON.AJAX("./geojson/waste_baskets.geojson", {
+    style: function (feature) {
+        return feature.properties && feature.properties.style;
+    },
+
+    pointToLayer: function (feature, latlng) {
+        return L.marker(latlng, {
+          icon: trashIcon
+        });
+    }
+});
+wastebinLayer.addTo(map);
+
+
